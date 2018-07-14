@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Metode TOPSIS - Sistem Pendukung Keputusan</title>
+	<meta charset="UTF-8" />
+	<!-- stylesheet -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<!-- stylesheet -->
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper mx-auto">
+		<!-- container -->
+		<div class="container pt-2">
+			<!-- header -->
+			<div class="card mt-3 mb-1">
+				<div class="card-body p-1">
+					<nav class="navbar navbar-light justify-content-center">
+						<span class="navbar-brand text-center">
+							Sistem Pendukung Keputusan
+							<br>
+							<small class="mt-0 pt-0 text-muted">
+								Metode TOPSIS
+							</small>
+						</span>
+					</nav>
+				</div>
+			</div>
+			<!-- header -->
+			<!-- first -->
+			<div id="first">
+				<div class="row">
+					<div class="col">
+						<div class="card my-3">
+							<div class="card-body">
+								<!-- tujuan -->
+								<div class="input mb-4">
+									<input type="text" class="form-control form-control-sm" id="tujuan-input" placeholder="Tujuan. Contoh: lokasi untuk mendirikan gedung baru">
+								</div>
+								<!-- tujuan -->
+								<!-- kriteria -->
+								<h5>Kriteria dan Sifat Kriteria</h5>
+								<table class="table" id="kriteria">
+									<thead>
+										<tr>
+											<th width="100">Kode</th>
+											<th>Nama Kriteria</th>
+											<th>Sifat</th>
+											<th width="60"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr id="0">
+											<td>
+												<input type="text" class="form-control form-control-sm" placeholder="Kode" name="kode-kriteria">
+											</td>
+											<td>
+												<input type="text" class="form-control form-control-sm" placeholder="Nama Kriteria" name="nama-kriteria">
+											</td>
+											<td>
+												<select class="form-control form-control-sm" name="sifat-kriteria">
+													<option selected disable hidden>Sifat</option>
+													<option value="1">Benefit</option>
+													<option value="0">Cost</option>
+												</select>
+											</td>
+											<td>
+												<span class="tambah-kriteria btn btn-info btn-sm btn-block">
+													<i class="fa fa-plus"></i>
+												</span>
+											</td>
+										</tr>
+
+									</tbody>
+								</table>
+								<!-- kriteria -->
+								<!-- alternatif -->
+								<h5>Alternatif</h5>
+								<table class="table" id="alternatif">
+									<thead>
+										<tr>
+											<th width="100">Kode</th>
+											<th>Nama Alternatif</th>
+											<th width="60"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr id="0">
+											<td>
+												<input type="text" class="form-control form-control-sm" placeholder="Kode" name="kode-alternatif">
+											</td>
+											<td>
+												<input type="text" class="form-control form-control-sm" placeholder="Nama Alternatif" name="nama-alternatif">
+											</td>
+											<td>
+												<span class="tambah-alternatif btn btn-info btn-sm btn-block">
+													<i class="fa fa-plus"></i>
+												</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<!-- alternatif -->
+								<!-- selanjutnya -->
+								<hr>
+								<button class="btn btn-info btn-sm btn-block" id="bf">Selanjutnya</button>
+								<!-- selanjutnya -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- first -->
+			<!-- second -->
+			<div id="second">
+				<div class="row">
+					<div class="col">
+						<div class="card my-3">
+							<div class="card-body">
+								<!-- matriks nilai -->
+								<h5>Matriks Nilai Alternatif terhadap Kriteria</h5>
+								<table class="table" id="matriks-nilai">
+									<thead>
+										<tr>
+											<th rowspan="2" width="100">Alternatif</th>
+											<th class="nilai">Nilai di Setiap Kriteria</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+								<!-- matriks nilai -->
+								<!-- bobot kriteria -->
+								<h5>Bobot Kriteria</h5>
+								<table class="table" id="bobot">
+									<thead>
+										<tr>
+											<th width="100">Kode Bobot</th>
+											<th>Nilai Bobot</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+								<!-- bobot kriteria -->
+								<!-- selanjutnya -->
+								<hr>
+								<button class="btn btn-info btn-sm btn-block" id="bs">Selanjutnya</button>
+								<!-- selanjutnya -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- second -->
+			<!-- third -->
+			<div id="third">
+				<div class="row">
+					<div class="col">
+						<div class="card my-3">
+							<div class="card-body">
+								<!-- normalisasi -->
+								<h5>Normalisasi Matriks</h5>
+								<table class="table" id="normalisasi">
+									<thead>
+										<tr rowspan="2">
+											<th rowspan="2" width="100">Alternatif</th>
+											<th class="nilai">Nilai di Setiap Kriteria</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+								<!-- normalisasi -->
+								<!-- normalisasi x bobot -->
+								<h5>Perkalian Bobot Kriteria dengan Matriks Ternormalisasi</h5>
+								<table class="table" id="bobot-normal">
+									<thead>
+										<tr rowspan="2">
+											<th rowspan="2" width="100">Alternatif</th>
+											<th class="nilai">Nilai di Setiap Kriteria</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+								<!-- normalisasi x bobot -->
+								<!-- solusi ideal -->
+								<h5>Solusi Ideal Positif dan Solusi Ideal Negatif</h5>
+								<table class="table" id="solusi">
+									<thead>
+										<tr>
+											<th colspan="2">Solusi Ideal Positif</th>
+											<th colspan="2">Solusi Ideal Negatif</th>
+										</tr>
+										<tr>
+											<th>Kode</th>
+											<th>Nilai</th>
+											<th>Kode</th>
+											<th>Nilai</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+								<!-- solusi ideal -->
+								<!-- jarak alternatif -->
+								<h5>Jarak Alternatif</h5>
+								<table class="table" id="jarak">
+									<thead>
+										<tr>
+											<th colspan="2">Jarak Alternatif terhadap Solusi Ideal Positif</th>
+											<th colspan="2">Jarak Alternatif terhadap Solusi Ideal Negatif</th>
+										</tr>
+										<tr>
+											<th>Kode</th>
+											<th>Nilai</th>
+											<th>Kode</th>
+											<th>Nilai</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+								<!-- jarak alternatif -->
+								<!-- nilai preferensi -->
+								<h5>Nilai Preferensi</h5>
+								<table class="table" id="preferensi">
+									<thead>
+										<tr>
+											<th>Kode</th>
+											<th>Nilai</th>
+											<th>Ranking</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+								<!-- nilai preferensi -->
+								<!-- kesimpulan -->
+								<h5>Kesimpulan</h5>
+								<p class="text-justify">
+									Dari nilai preferensi di atas, dapat dilihat bahwa <span id="pref"></span> memiliki nilai terbesar yaitu <span id="pref-val"></span> sehingga mendapat ranking 1. Dengan begitu, dapat disimpulkan bahwa alternatif <span id="alt-id"></span> yang akan lebih dipilih.
+								</p>
+								<p class="text-justify mb-4">
+									Dengan kata lain, <span id="alt-name"></span> akan terpilih sebagai <span id="tujuan"></span>
+								</p>
+								<!-- kesimpulan -->
+								<!-- ulang -->
+								<hr>
+								<button class="btn btn-info btn-sm btn-block" id="bt">Mulai Lagi</button>
+								<!-- ulang -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- third -->
+			<!-- footer -->
+			<footer class="text-center text-muted mb-3">
+				<small>15523206 & 15523240</small> <br>
+				<small>
+					<a class="text-info" href="http://informatics.uii.ac.id">Jurusan Teknik Informatika</a> | <a class="text-info" href="http://fit.uii.ac.id">Fakultas Teknologi Industri</a> | <a class="text-info" href="http://uii.ac.id">Universitas Islam Indonesia</a>
+				</small>
+			</footer>
+			<!-- footer -->
+		</div>
+		<!-- container -->
+	</div>
+	<!-- wrapper -->
+	<!-- script -->
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/script.js"></script>
+	<!-- script -->
+</body>
+</html>
