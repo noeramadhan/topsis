@@ -1,6 +1,6 @@
 html, body { background: #f5f5f5; }
 table, tr, th, td { text-align: center !important; vertical-align: middle !important; font-size: 12px; }
 .wrapper { max-width: 700px; }
-#second, #third { display: block; }
+#second, #third { display: none; }
 #first .card, #second .card, #third .card { border-top: 5px #17a2b8 solid; }
 .navbar-brand { line-height: 1; }
